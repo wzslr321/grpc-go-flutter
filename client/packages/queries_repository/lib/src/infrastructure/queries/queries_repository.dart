@@ -1,3 +1,4 @@
+import 'package:fpdart/fpdart.dart';
 import 'package:queries_repository/src/domain/queries/queries_repository_interface.dart';
 import 'package:queries_repository/src/domain/core/typedefs.dart';
 import 'package:queries_repository/src/domain/queries/value_objects.dart';
@@ -7,7 +8,9 @@ import 'package:queries_repository/src/domain/queries/value_objects.dart';
 class QueriesRepository implements QueriesRepositoryInterface {
   @override
   Future<QueryResult> performQuery(Query query) {
-    // TODO: implement performQuery by connecting with grpc
-    throw UnimplementedError();
+    return Future.delayed(
+      const Duration(seconds: 2),
+      () => right('Query result'),
+    );
   }
 }

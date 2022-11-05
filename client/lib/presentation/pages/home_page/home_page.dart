@@ -8,6 +8,7 @@ import '../../core/constants/my_dimensions.dart';
 import 'widgets/clickable/perform_query_clickable_widget.dart';
 import 'widgets/header_widget.dart';
 import 'widgets/query_form_field_widget.dart';
+import 'widgets/query_result_widget.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -43,6 +44,8 @@ class _HomePageView extends StatelessWidget {
               HeaderWidget(),
               QueryFormFieldWidget(),
               PerformQueryClickableWidget(),
+              SizedBox(height: 25),
+              QueryResultWidget(),
             ],
           ),
         ),
