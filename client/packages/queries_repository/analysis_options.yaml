@@ -1,0 +1,41 @@
+include: all_lint_rules.yaml
+analyzer:
+  exclude:
+    - "**/*.pb*.dart"
+    - "**/*.g.dart"
+    - "**/*.freezed.dart"
+    - "**/i18n.dart"
+    - "**/*.config.dart"
+    - "**/*.gr.dart"
+    - "**/*.mocks.dart"
+    - "**/firebase_options.dart"
+    - "lib/generated_plugin_registrant.dart"
+  strong-mode:
+    implicit-casts: false
+    implicit-dynamic: false
+  errors:
+    included_file_warning: ignore
+    undefined_named_parameter: ignore
+    extra_positional_arguments: ignore
+    const_eval_throws_exception: ignore
+    implicit_dynamic_parameter: ignore
+
+linter:
+  rules:
+    # omit_local_variable_types: false
+    # avoid_types_on_closure_parameters: false
+    # top_level_function_literal_block: false
+    sort_pub_dependencies: false
+    prefer_double_quotes: false
+    always_specify_types: false
+    unnecessary_final: false
+    prefer_expression_function_bodies: false
+    always_put_required_named_parameters_first: false
+    avoid_as: false
+    flutter_style_todos: false
+    lines_longer_than_80_chars: false
+    avoid_annotating_with_dynamic: false
+    public_member_api_docs: false
+    package_api_docs: false
+    use_key_in_widget_constructors: false
+    comment_references: true

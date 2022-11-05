@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package queries;
+
+option go_package = "github.com/wzslr321/grpc-go-flutter/server/proto";
+
+service Query {
+    rpc RunQuery(RunQueryRequest) returns (RunQueryResponse) {}
+}
+
+message RunQueryRequest {
+    string query = 1;
+}
+
+message RunQueryResponse {
+    string result = 1;
+}

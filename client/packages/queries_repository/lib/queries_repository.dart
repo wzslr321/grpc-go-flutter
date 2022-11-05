@@ -1,0 +1,1 @@
+library queries_repository;
