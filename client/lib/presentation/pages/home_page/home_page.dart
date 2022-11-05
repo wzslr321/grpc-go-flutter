@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:queries_repository/queries_repository.dart';
 
 import '../../../blocs/query_bloc/query_bloc.dart';
 import '../../core/constants/my_colors.dart';
 import '../../core/constants/my_dimensions.dart';
+import 'widgets/clickable/perform_query_clickable_widget.dart';
 import 'widgets/header_widget.dart';
 import 'widgets/query_form_field_widget.dart';
 
@@ -13,7 +15,9 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => QueryBloc(),
+      create: (context) => QueryBloc(
+        context.read<QueriesRepository>(),
+      ),
       child: const _HomePageView(),
     );
   }
@@ -38,6 +42,7 @@ class _HomePageView extends StatelessWidget {
             children: const [
               HeaderWidget(),
               QueryFormFieldWidget(),
+              PerformQueryClickableWidget(),
             ],
           ),
         ),

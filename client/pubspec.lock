@@ -222,7 +222,7 @@ packages:
     source: sdk
     version: "0.0.0"
   fpdart:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: fpdart
       url: "https://pub.dartlang.org"
