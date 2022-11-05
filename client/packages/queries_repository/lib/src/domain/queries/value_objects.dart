@@ -15,7 +15,10 @@ class Query extends ValueObject<String> {
     );
   }
 
+  factory Query.empty() => Query('');
+
   const Query._(this.value);
+
 
   @override
   final Either<ValueFailure<String>, String> value;
