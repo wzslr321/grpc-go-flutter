@@ -1,3 +1,5 @@
+**/*.freezed.dart
+
 # Miscellaneous
 *.class
 *.log
