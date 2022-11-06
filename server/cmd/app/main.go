@@ -21,6 +21,7 @@ type server struct {
 }
 
 func (s *server) PerformQuery(ctx context.Context, in *pb.QueryRequest) (*pb.QueryResponse, error) {
+	// I will add functionality of scrapping wikipedia here
 	return &pb.QueryResponse{Result: "very good result of query: " + in.Query}, nil
 }
 

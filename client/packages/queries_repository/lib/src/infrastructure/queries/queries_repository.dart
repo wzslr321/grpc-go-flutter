@@ -29,6 +29,7 @@ class QueriesRepository implements QueriesRepositoryInterface {
             ..query = query
       );
       return right(response.result);
+      // idk what to catch tbh
     } catch (err) {
       print(err);
       return left(const QueryFailure.serverError());
