@@ -33,3 +33,7 @@ In order to make it work, you need to run Golang server `go run cmd/app/main.go`
 If you want to make changes to `.proto` file and regenerate the code, I created a small bash script that does it for you.
 All you have to do is execute `sh generate.sh` from the `proto` directory.<br>
 
+Quick demonstration
+---
+
+https://user-images.githubusercontent.com/59893892/200149452-400ff8fd-4981-4f43-96a0-2ad97cee7599.mp4
