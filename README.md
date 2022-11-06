@@ -36,4 +36,5 @@ All you have to do is execute `sh generate.sh` from the `proto` directory.<br>
 Quick demonstration
 ---
 
-https://user-images.githubusercontent.com/59893892/200149680-725d40be-b23c-4942-a534-8c49da0d3ed4.mp4
+https://user-images.githubusercontent.com/59893892/200149870-75bc2e85-c969-4ddc-9fad-fcc0a27745b9.mp4
+
