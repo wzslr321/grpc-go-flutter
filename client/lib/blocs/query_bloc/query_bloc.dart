@@ -30,8 +30,8 @@ class QueryBloc extends Bloc<QueryEvent, QueryState> {
         ));
         return;
       }
-
-      final queryResult = await _queriesRepository.performQuery(state.query);
+      final queryStr = state.query.getOrCrash();
+      final queryResult = await _queriesRepository.performQuery(queryStr);
       queryResult.fold((l) {
         emit(state.copyWith(
           isPerformingQuery: false,

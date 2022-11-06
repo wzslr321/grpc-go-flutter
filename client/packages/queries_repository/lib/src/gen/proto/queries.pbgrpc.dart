@@ -14,21 +14,20 @@ import 'queries.pb.dart' as $0;
 export 'queries.pb.dart';
 
 class QueryClient extends $grpc.Client {
-  static final _$runQuery =
-      $grpc.ClientMethod<$0.RunQueryRequest, $0.RunQueryResponse>(
-          '/queries.Query/RunQuery',
-          ($0.RunQueryRequest value) => value.writeToBuffer(),
-          ($core.List<$core.int> value) =>
-              $0.RunQueryResponse.fromBuffer(value));
+  static final _$performQuery =
+      $grpc.ClientMethod<$0.QueryRequest, $0.QueryResponse>(
+          '/queries.Query/PerformQuery',
+          ($0.QueryRequest value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) => $0.QueryResponse.fromBuffer(value));
 
   QueryClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
       $core.Iterable<$grpc.ClientInterceptor>? interceptors})
       : super(channel, options: options, interceptors: interceptors);
 
-  $grpc.ResponseFuture<$0.RunQueryResponse> runQuery($0.RunQueryRequest request,
+  $grpc.ResponseFuture<$0.QueryResponse> performQuery($0.QueryRequest request,
       {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$runQuery, request, options: options);
+    return $createUnaryCall(_$performQuery, request, options: options);
   }
 }
 
@@ -36,20 +35,20 @@ abstract class QueryServiceBase extends $grpc.Service {
   $core.String get $name => 'queries.Query';
 
   QueryServiceBase() {
-    $addMethod($grpc.ServiceMethod<$0.RunQueryRequest, $0.RunQueryResponse>(
-        'RunQuery',
-        runQuery_Pre,
+    $addMethod($grpc.ServiceMethod<$0.QueryRequest, $0.QueryResponse>(
+        'PerformQuery',
+        performQuery_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $0.RunQueryRequest.fromBuffer(value),
-        ($0.RunQueryResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $0.QueryRequest.fromBuffer(value),
+        ($0.QueryResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$0.RunQueryResponse> runQuery_Pre(
-      $grpc.ServiceCall call, $async.Future<$0.RunQueryRequest> request) async {
-    return runQuery(call, await request);
+  $async.Future<$0.QueryResponse> performQuery_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.QueryRequest> request) async {
+    return performQuery(call, await request);
   }
 
-  $async.Future<$0.RunQueryResponse> runQuery(
-      $grpc.ServiceCall call, $0.RunQueryRequest request);
+  $async.Future<$0.QueryResponse> performQuery(
+      $grpc.ServiceCall call, $0.QueryRequest request);
 }
