@@ -33,10 +33,17 @@ class QueryResultWidget extends StatelessWidget {
               ),
             );
           }, (r) {
-            return Text(
-              'Result: $r',
-              style: const TextStyle(
-                color: Colors.white,
+            return ConstrainedBox(
+              constraints: BoxConstraints(
+                maxHeight: MediaQuery.of(context).size.height * 0.425,
+              ),
+              child: SingleChildScrollView(
+                child: Text(
+                  r,
+                  style: const TextStyle(
+                    color: Colors.white,
+                  ),
+                ),
               ),
             );
           });
