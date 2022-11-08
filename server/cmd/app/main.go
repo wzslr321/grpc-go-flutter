@@ -3,11 +3,13 @@ package main
 import (
 	"context"
 	"fmt"
+	"github.com/gocolly/colly/v2"
 	pb "github.com/wzslr321/grpc-go-flutter/server/gen/proto"
 	"github.com/wzslr321/grpc-go-flutter/server/settings"
 	"google.golang.org/grpc"
 	"log"
 	"net"
+	"strings"
 )
 
 const devConfig = "/config/config_dev.ini"
@@ -21,8 +23,17 @@ type server struct {
 }
 
 func (s *server) PerformQuery(ctx context.Context, in *pb.QueryRequest) (*pb.QueryResponse, error) {
-	// I will add functionality of scrapping wikipedia here
-	return &pb.QueryResponse{Result: "very good result of query: " + in.Query}, nil
+	c := colly.NewCollector()
+	var result string
+	c.OnHTML(".mw-parser-output", func(e *colly.HTMLElement) {
+		firstP := strings.Split(e.ChildText("p"), "\n")[0]
+		result = firstP
+	})
+	c.Visit(fmt.Sprintf("https://en.wikipedia.org/wiki/%s", in.Query))
+
+	r := fmt.Sprintf("Result of query %s: %s", in.Query, result)
+
+	return &pb.QueryResponse{Result: r}, nil
 }
 
 func main() {
