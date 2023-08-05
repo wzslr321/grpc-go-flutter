@@ -8,12 +8,6 @@ with custom backend based on <strong>gRPC</strong> and <strong> Golang</strong>.
 not spaghetti code, so it should be great starter, easy to extend. Its current functionality is performing a query
 entered by user and performing it on a wikipedia to scrap some information. (ok, scrapping is not implemented yet, I'll
 do it when I get some sleep). 
-
-If you find something that can be improved, I'd be grateful for a Pull Request. Also feel free to 
-reach out to me on Discord - Creatix#9999 - in order to discuss anything.
- 
-<h3> I am currently working on a bigger <a href="https://github.com/wzslr321/road_runner"> open-source project </a> in a similar stack - Golang, gRPC, Flutter, Docker... If you want to colaborate, feel free to reach out to me! </h3>
-
 ---
 
 <p align="center">
