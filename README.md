@@ -3,11 +3,12 @@ gRPC + Flutter + Golang = 😎
 
 <br>
 
-This repository is meant to be a reference on how to start a <strong>Flutter</strong> project
-with custom backend based on <strong>gRPC</strong> and <strong> Golang</strong>. It is (at least I believe so)
-not spaghetti code, so it should be great starter, easy to extend. Its current functionality is performing a query
-entered by user and performing it on a wikipedia to scrap some information. (ok, scrapping is not implemented yet, I'll
-do it when I get some sleep). 
+This repository is  a reference on how to start a <strong>Flutter</strong> project
+with a custom backend based on <strong>gRPC</strong> and <strong> Golang</strong>.
+It is (at least I believe so) not a spaghetti code, so it should be a great starter, and easy to extend. 
+
+It allows one to enter a query and send it with a request to the Golang backend server, which then performs it on Wikipedia to scrap information and return it as a result. All via gRPC.
+
 ---
 
 <p align="center">
